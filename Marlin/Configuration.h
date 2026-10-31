@@ -1922,7 +1922,7 @@
 #define INVERT_X_DIR true
 #define INVERT_Y_DIR true
 #if ENABLED(SPRO_TMC2209)
-  #define INVERT_Z_DIR true
+  #define INVERT_Z_DIR false // Medido na impressora: com true, Z+ sobe a mesa
 #else
   #define INVERT_Z_DIR false
 #endif
