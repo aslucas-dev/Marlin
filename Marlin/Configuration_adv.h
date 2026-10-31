@@ -4658,10 +4658,11 @@
  * WIFISUPPORT covers both an add-on WiFi module wired to the controller and
  * Marlin's own WiFi on an ESP32 build. ESP3D_WIFISUPPORT is ESP32 only.
  */
-//#define WIFISUPPORT         // Marlin embedded WiFi management. Not needed for simple WiFi serial port.
+#define WIFISUPPORT         // Marlin embedded WiFi management. Not needed for simple WiFi serial port.
 //#define ESP3D_WIFISUPPORT   // ESP3D Library WiFi management (https://github.com/luc-github/ESP3DLib)
 
 #if ANY(WIFISUPPORT, ESP3D_WIFISUPPORT)
+  #define MKS_WIFI_MODULE
   /**
    * Webserver and OTA updates.
    * With WIFISUPPORT these are Marlin's own, implemented in HAL/ESP32/wifi/ and built
