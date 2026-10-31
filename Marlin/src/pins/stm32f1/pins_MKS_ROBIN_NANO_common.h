@@ -211,7 +211,7 @@
   #define TOUCH_BUTTONS_HW_SPI
   #define TOUCH_BUTTONS_HW_SPI_DEVICE          2
 
-  #define TFT_BUFFER_WORDS                 14400
+  #define TFT_BUFFER_WORDS                 7200
 #endif
 
 #define SPI_FLASH
