@@ -721,8 +721,10 @@ void CardReader::manage_media() {
         #endif
       #endif
       if (old_stat <= MEDIA_BOOT) {     // Mount at boot before anything else runs
-        safe_delay(500);                // Time for inserted media to settle
-        mount(!retries_left);           // Alert only on the last try
+        if (!isMounted()) {             // Already mounted by setup() for Power-Loss Recovery?
+          safe_delay(500);              // Time for inserted media to settle
+          mount(!retries_left);         // Alert only on the last try
+        }
       }
       else if (!mount_async(!retries_left)) {
         prev_stat = old_stat;           // Still mounting. Continue on the next call.
