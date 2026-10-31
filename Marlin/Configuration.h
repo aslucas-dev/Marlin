@@ -1934,7 +1934,9 @@
 //#define INVERT_W_DIR false
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#if ENABLED(SPRO_INVERTED_E) && DISABLED(SPRO_TMC2209)
+#if ENABLED(SPRO_TMC2209)
+  #define INVERT_E0_DIR false // Medido na impressora: com true, E+ retrai o filamento
+#elif ENABLED(SPRO_INVERTED_E)
   #define INVERT_E0_DIR false
 #else
   #define INVERT_E0_DIR true
